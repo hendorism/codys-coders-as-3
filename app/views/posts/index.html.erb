@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<table>
+
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td>
+          <table class="post-table">
+            <tr><thead><th><%= post.title %></th></thead></tr>
+            <tr><td><%= post.body %></td></tr>
+            <tr><td><%= post&.user&.name %></td></tr>
+              <tr><td><div class="reply-div">
+                <% post.replies.each do |reply| %>
+                  <p class="reply-div-body"><%= post.reply.body %></p>
+                  <p class="reply-div-user-show"><%= post.reply.user.name %></p>
+                <% end %>
+              </div></td></tr>
+          </table>
+        </td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<table id="footer-nav-table"><tr>
+    <td><%= link_to 'Users', users_path %></td>
+    <td><%= link_to 'Posts', posts_path %></td>
+    <td><%= link_to 'Replies', replies_path %></td>
+  </tr><tr>
+    <td><%= link_to 'New User', new_user_path %></td>
+    <td><%= link_to 'New Post', new_post_path %></td>
+    <td><%= link_to 'New Reply', new_reply_path %></td>
+  </tr>
+</table>
