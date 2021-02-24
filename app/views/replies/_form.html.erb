@@ -15,10 +15,15 @@
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
-  
+
   <div class="field">
     <%= form.label :user %>
-    <%= collection_select(:post, :user_id, User.all, :id, :name) %><br>
+    <%= collection_select(:reply, :user_id, User.all, :id, :name) %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :post %>
+    <%= collection_select(:reply, :post_id, Post.all, :id, :title) %><br>
   </div>
 
   <div class="actions">

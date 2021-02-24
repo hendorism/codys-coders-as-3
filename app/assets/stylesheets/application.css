@@ -35,18 +35,52 @@ table#footer-nav-table {
   bottom: 15px;
 }
 
-div.reply-div {
+div.replies-div {
   border: 1px solid black;
   height: 110px;
+  width: 500px;
   overflow: scroll;
+  word-wrap: break-word;
+  resize: both;
+  max-width: 90%;
+  padding-left: 7px;
 }
 
-p.reply-div-body{
-  font-size: 0.9em;
+table.post-table th {
+  background-color: #7799bb;
+  font-size: 0.7em;
 }
-p.reply-div-user-show {
-  background-color: #dd33bb;
+
+table.post-table th span {
+  font-size: 1.4em;
+  color: #bbccff;
+}
+
+div.reply-div {
+  min-height: 30px;
+  background-color: #89bda9;
+  border: 1px solid black;
+  word-wrap: break-word;
+  max-width: 90%;
+  padding-left: 7px;
+}
+
+div.reply-div p {
+  font-size: 0.7em;
+}
+
+div.reply-div span {
+  background-color: #112365;
+  padding: 3px;
   border-radius: 4px;
-  font-size: 1.2em;
+  font-size: 0.8em;
   float: right;
+}
+
+div.reply-body-div {
+  background-color: #defdef;
+  max-width: 80%;
+  margin-left: 13px;
+  padding: 3px;
+  border-radius: 3px;
 }

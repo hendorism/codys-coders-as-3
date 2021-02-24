@@ -8,7 +8,12 @@
 <p>
   <strong>Body:</strong>
   <%= @post.body %>
+  <% post.replies.each do |reply| %>
+    <p class="reply-div-body"><%= reply.body %></p>
+    <p class="reply-div-user-show"><%= reply.user.name %></p>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+<%= link_to 'Reply', new_reply_path %>
